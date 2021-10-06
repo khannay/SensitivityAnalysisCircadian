@@ -85,11 +85,6 @@ class HessianCircadian:
 
 
 
-
-
-
-
-
 if __name__ == '__main__':
 
     from lightschedules import RegularLight
