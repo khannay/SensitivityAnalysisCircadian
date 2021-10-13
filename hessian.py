@@ -115,14 +115,13 @@ if __name__ == '__main__':
     from lightschedules import RegularLight
     ts=np.arange(0, 24*5, 0.10)
     lights = jnp.array([ RegularLight(t) for t in ts ])
-    lights=np.zeros(len(ts))
     sens=HessianCircadian()
 
     hessianVal = sens.hessian(light=lights)
 
     hessianEigs=np.linalg.eigvals(hessianVal)
     print(hessianEigs)
-    plt.scatter(range(len(hessianEigs)), hessianEigs)
+    plt.bar(range(len(hessianEigs)), hessianEigs)
     plt.show()
 
     print(hessianVal)
